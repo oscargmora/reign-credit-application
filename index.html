@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reign Finance Group Credit Application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="Outlook-Logo" alt="Reign Finance Group Logo">
+    </header>
+    <divider>
+        <div>Credit Application</div>
+    </divider>
+    <main>
+        <div id="business-information-container">
+            <form id="business-information" action="#">
+                <div class="form-container" id="business-name-container">
+                    <div class="form">
+                        <label for="legal-business-name">Legal Business Name<span class="required-label">*</span></label>
+                        <input type="text" id="legal-business-name" name="legal-business-name" required/>
+                    </div>
+                    <div class="form">
+                        <label for="dba">Doing Business As Name (DBA)</label>
+                        <input type="text" id="dba" name="dba"/>
+                    </div>
+                    <div class="form">
+                        <label for="fed-id">Fed ID #</label>
+                        <input type="text" id="fed-id" name="fed-id"/>
+                    </div>
+                </div>
+                <div class="form-container" id="business-address-container">
+                    <div class="form">
+                        <label for="business-address" id="business-address-label">Business Address</label>
+                        <input type="text" id="business-address" name="business-address"/>
+                        <p class="form-input-footer">Address Line 1</p>
+                    </div>
+                    <div class="form">
+                        <div class="block"></div>
+                        <input type="text" id="city"/>
+                        <p class="form-input-footer">City</p>
+                    </div>
+                    <div class="form">
+                        <select>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <p class="form-input-footer">State</p>
+                    </div>
+                </div>
+                <div class="form-container" id="zip-code-container">
+                    <div class="form">
+                        <input type="text" id="zip-code"/>
+                        <p class="form-input-footer">Zip Code</p>
+                    </div>
+                </div>
+                <div class="form-container" id="business-phone-number-container">
+                    <div class="form">
+                        <label for="business-phone-number" id="business-phone-number-label">Business Phone Number<span class="required-label">*</span></label>
+                        <input type="text" id="business-phone-number" name="business-phone-number" required/>
+                    </div>
+                    <div class="form">
+                        <label for="business-email" id="business-email-label">Business Email<span class="required-label">*</span></label>
+                        <input type="text" id="business-email" name="business-email" required/>
+                    </div>
+                    <div class="form">
+                        <label for="business-start-date">Business Start Date<span class="required-label">*</span></label>
+                        <input type="text" id="business-start-date" name="business-start-date" required/>
+                    </div>
+                </div>
+                <div class="form-container" id="legal-business-structure-container">
+                    <div class="form">
+                        <label for="legal-business-structure">Legal Business Structure<span class="required-label">*</span></label>
+                        <select required>
+                            <option value="select">Select</option>
+                            <option value="SP">Sole Proprietor</option>
+                            <option value="LLC">LLC</option>
+                            <option value="SCORP">S-Corp</option>
+                            <option value="CCORP">C-Corp</option>
+                        </select>
+                    </div>
+                    <div class="form">
+                        <label for="equipment-location">Equipment Location (parked when not in use)</label>
+                        <input type="text" id="equipment-location" name="equipment-location"/>
+                    </div>
+                    <div class="form">
+                        <label for="business-type">Business Type/Services Provided</label>
+                        <input type="text" id="business-type" name="business-type"/>
+                    </div>
+                </div>
+                <div class="form-container" id="number-of-tractors-container">
+                    <div class="form">
+                        <label for="number-of-tractors">Number of Tractors/Tractors</label>
+                        <input type="text" id="number-of-tractors" name="number-of-tractors"/>
+                    </div>  
+                    <div class="form">
+                        <label for="number-of-trailers">Number of Trailers</label>
+                        <input type="text" id="number-of-trailers" name="number-of-trailers"/>
+                    </div>
+                    <div class="form">
+                        <label for="other">Other</label>
+                        <input type="text" id="other" name="other">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
