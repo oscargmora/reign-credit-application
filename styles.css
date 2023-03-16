@@ -50,7 +50,8 @@ table {
 }
 
 html {
-    padding: 0em 2em 0em 2em;
+    padding: 0em 5em 0em 5em;
+    background-color: #d6b87936;
 }
 
 /* Custom Font */
@@ -97,28 +98,92 @@ form {
 .form-container {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+    margin-bottom: 1em;
 }
 
-#zip-code-container {
-    margin-top: -1em;
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
 }
 
-label, input {
-    display: block;
+#business-address {
+    width: 181%;
+    margin-left: 101%;
 }
 
-@media (max-width: 400px) {
+label {
+    width: 81%;
+    font-size: 1.2em;
+    margin-bottom: 0.1em;
+}
+
+input {
+    width: 80%;
+    height: 1.4em;
+    border: none;
+    border-radius: 4px;
+}
+
+select {
+    width: 83%;
+    height: 1.85em;
+    border: none;
+}
+
+.form-input-footer {
+    width: 81%;
+    margin-top: 0.1em;
+    font-size: 0.8em;
+}
+
+section-divider {
+    margin-bottom: 1em;
+}
+
+section-divider>div {
+    width: 94%;
+    margin-left: 3%;
+}
+
+#section-divider-title {
+    color: #00000097;
+}
+
+#section-divider-line {
+    border-top: 1px solid #00000097;
+    margin: 0.5em auto;
+}
+
+@media (max-width: 415px) {
+    html {
+        padding: 0em 2em 0em 2em;
+    }
+
     header>img {
         height: 30%;
         width: 30%;
     }
 
-    form {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    .form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .form-container {
         display: block;
+    }
+
+    #business-address {
+        margin: 0;
+        width: 80%;
+    }
+
+    section-divider>div {
+        width: 80%;
+        margin-left: 10%;
     }
 }
