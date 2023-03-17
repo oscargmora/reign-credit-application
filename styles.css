@@ -109,7 +109,7 @@ form {
     margin-bottom: 1em;
 }
 
-#business-address {
+#business-address, #address, #sales-rep-select {
     width: 181%;
     margin-left: 101%;
 }
@@ -157,6 +157,96 @@ section-divider>div {
     margin: 0.5em auto;
 }
 
+.birth-date-select-container {
+    display: flex;
+    gap: 0.3em;
+    width: 80%;
+}
+
+#homeowner {
+    text-align: center;
+}
+
+#homeowner, #add-owner {
+    font-size: 1.2em;
+}
+
+#homeowner-radio-buttons {
+    display: flex;
+    margin-top: 0.5em;
+}
+
+#homeowner-radio-buttons>input {
+    margin-right: 1.2em;
+}
+
+#add-principal-container {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0.8em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#add-owner {
+    margin-bottom: 0.4em;
+}
+
+#add-owner-radio-buttons-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-owner-radio-buttons {
+    display: flex;
+    align-items: center;
+}
+
+#add-owner-radio-buttons>.radio {
+    width: 1em;
+}
+
+#terms {
+    margin: 0;
+    width: 3%;
+}
+
+#terms-label {
+    margin-left: -12%;
+    margin-bottom: 1%;
+}
+
+#checkbox-container {
+    width: 93%;
+}
+
+#checkbox-form {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+#terms-paragraph {
+    display: inline;
+    line-height: 1.2;
+}
+
+#submit-button {
+    background: none;
+    border: 2px solid black;
+    width: 5em;
+    height: 2em;
+    margin-left: 10%;
+}
+
+#submit-button:hover,
+select:hover,
+.radio:hover,
+.checkbox:hover {
+    cursor: pointer;
+}
+
 @media (max-width: 415px) {
     html {
         padding: 0em 2em 0em 2em;
@@ -165,6 +255,7 @@ section-divider>div {
     header>img {
         height: 30%;
         width: 30%;
+        font-size: 0.41em;
     }
 
     .form {
@@ -177,7 +268,7 @@ section-divider>div {
         display: block;
     }
 
-    #business-address {
+    #business-address, #address, #sales-rep-select  {
         margin: 0;
         width: 80%;
     }
@@ -185,5 +276,46 @@ section-divider>div {
     section-divider>div {
         width: 80%;
         margin-left: 10%;
+    }
+
+    #terms {
+        margin: 0;
+        width: 10%;
+    }
+    
+    #terms-label {
+        margin-left: 5%;
+        margin-bottom: 1%;
+    }
+    
+    #checkbox-container {
+        width: 80%;
+    }
+    
+    #checkbox-form {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    
+    #terms-paragraph {
+        display: inline;
+        line-height: 1.2;
+    }
+
+    #add-principal-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+        margin-left: 0;
+    }
+
+    #add-owner-radio-buttons-container {
+        align-items: center;
+    }
+
+    #add-owner-radio-buttons>label {
+        width: 100%;
     }
 }
