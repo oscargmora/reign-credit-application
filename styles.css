@@ -49,6 +49,9 @@ table {
 	border-spacing: 0;
 }
 
+
+
+
 html {
     padding: 0em 5em 0em 5em;
     background-color: #d6b87936;
@@ -325,6 +328,7 @@ a {
     font-size: 1em;
     background-color: #c9982f;
     border: 2px solid #c9982f;
+    border-radius: 4px;
 }
 
 #submit-button:hover,

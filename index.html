@@ -14,7 +14,7 @@
         <div>Credit Application</div>
     </divider>
     <main>
-        <form id="information" action="#">
+        <form id="information" name="information" action="https://formsubmit.co/48cb08fc1eb35ae6faee9c76866b3cd7" method="POST"/>
             <div class="form-container" id="name-container">
                 <div class="form">
                     <label for="first-name">Legal Business Name<span class="required-label">*</span></label>
@@ -675,6 +675,9 @@
                         <option value class="placeholder" selected disabled hidden>Select</option>
                         <option value="rossi-lausso">Rossi Lausso</option>
                         <option value="yvonne-cruz">Yvonne Cruz</option>
+                        <option value="agent-one">Agent 1</option>
+                        <option value="agent-two">Agent 2</option>
+                        <option value="agent-three">Agent 3</option>
                     </select>
                 </div>
             </div>  
@@ -718,7 +721,11 @@
               </div>  
             </div>
             <div class="form-container">
-                <input type="submit" id="submit-button">
+                <button type="submit" id="submit-button" onclick="submitForm()">Submit</button>
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
+                <input type="hidden" name="_subject" value="New Credit Application">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_replyto">
             </div>
         </form>
     </main>

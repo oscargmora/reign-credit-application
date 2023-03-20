@@ -59,3 +59,13 @@ ctx.lineJoin = ctx.lineCap = "round";
 canvas.addEventListener("pointerdown", handlePointerDown, {passive: true});
 canvas.addEventListener("pointerup", handlePointerUp, {passive: true});
 canvas.addEventListener("pointermove", handlePointerMove, {passive: true});
+
+
+
+function submitForm() {
+  if(document.getElementById('#sales-rep-select').value == "Yvonne Cruz") {
+    document.information.action = "oscgmora@gmail.com";
+  } else {
+    document.information.action = "oscgmora@gmail.com";
+  }
+}
