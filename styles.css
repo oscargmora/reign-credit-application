@@ -124,7 +124,7 @@ form {
 label {
     width: 81%;
     font-size: 1.2em;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.2em;
 }
 
 input {
@@ -200,33 +200,33 @@ section-divider>div {
     margin-right: 1.2em;
 }
 
-    input[type='radio']:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: white;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-    }
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: white;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
 
-    input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #ffa500;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid #ffa500;
-    }
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #ffa500;
+}
 
 #add-principal-container {
     margin-left: 5%;
@@ -236,6 +236,14 @@ section-divider>div {
     margin-bottom: 0.8em;
     grid-column-start: 1;
     grid-column-end: 3;
+}
+
+.none {
+    display: none;
+}
+
+.visible {
+    display: block;
 }
 
 #add-owner {
@@ -315,6 +323,7 @@ section-divider>div {
 
 .clear-button {
     color: black;
+    margin-top: 20%;
 }
 
 a {
@@ -412,9 +421,17 @@ select:hover,
   
   #submit-button {
         margin-left: 2%;
-  }
+    }
   
-  #clear-form {
-    margin-left: -6%;
-  }
+    #clear-form {
+        margin-left: -6%;
+    }
+
+    #signature-pad-form-container {
+        height: 8%;
+    }
+
+    .clear-button {
+        margin-top: 0;
+    }
 }
