@@ -1,74 +1,27 @@
-const canvas = document.querySelector('canvas');
-const signaturePadForm = document.querySelector('#signature-pad-form');
-const clearButton = document.querySelector('.clear-button');
-const ctx = canvas.getContext('2d');
-let writingMode = false;
-
-signaturePadForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  
-  const imageURL = canvas.toDataURL();
-  const image = document.createElement('img');
-  image.src = imageURL;
-  image.height = canvas.height;
-  image.width = canvas.width;
-  image.style.display = "block";
-  form.appendChild(image);
-  clearPad();
-})
-
-const clearPad = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+//Signature Names//
+function getOwnerOneNamesSignature() {
+  let firstNameSignature = document.getElementById("owner-one-first-name").value;
+  let lastNameSignature = document.getElementById("owner-one-last-name").value;
+  document.getElementById("name-p-signature-owner-one").innerText = firstNameSignature + ' ' + lastNameSignature;
 }
 
-clearButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  clearPad();
-})
-
-const getTargetPosition = (event) => {
-  positionX = event.clientX - event.target.getBoundingClientRect().x;
-  positionY = event.clientY - event.target.getBoundingClientRect().y;
-  
-  return [positionX, positionY];
+function getOwnerTwoNamesSignature() {
+  let firstNameSignature = document.getElementById("owner-two-first-name").value;
+  let lastNameSignature = document.getElementById("owner-two-last-name").value;
+  document.getElementById("name-p-signature-owner-two").innerText = firstNameSignature + ' ' + lastNameSignature;
 }
 
-const handlePointerMove = (event) => {
-  if (!writingMode) return;
-  
-  const [positionX, positionY] = getTargetPosition(event);
-  ctx.lineTo(positionX, positionY);
-  ctx.stroke();
-}
-
-const handlePointerUp = () => {
-  writingMode = false;
-}
-
-const handlePointerDown = (event) => {
-  writingMode = true;
-  ctx.beginPath();
-  
-  const[positionX, positionY] = getTargetPosition(event);
-  ctx.moveTo(positionX, positionY);
-}
-
-ctx.lineWidth = 3;
-ctx.lineJoin = ctx.lineCap = "round";
-
-canvas.addEventListener("pointerdown", handlePointerDown, {passive: true});
-canvas.addEventListener("pointerup", handlePointerUp, {passive: true});
-canvas.addEventListener("pointermove", handlePointerMove, {passive: true});
-
-
+// Owner Two Form - Making Visible and Hidden + Form Cleaning //
 let checkbox = document.getElementById("add-principal-owner");
-
 let inputDiv = document.getElementById("owner-two-section");
+let ownerTwoSignature = document.getElementById("second-owner-signature-input-container");
 
 function addOwnerTwo() {
   if (checkbox.checked === true) {
     inputDiv.classList.add('visible');
     inputDiv.classList.remove('none');
+    ownerTwoSignature.classList.add('visible');
+    ownerTwoSignature.classList.remove('none');
     document.getElementById('owner-two-first-name').required = true;
     document.getElementById('owner-two-last-name').required = true;
     document.getElementById('owner-two-percent-ownership').required = true;
@@ -82,27 +35,31 @@ function addOwnerTwo() {
     document.getElementById('owner-two-social-security').required = true;
     document.getElementById('owner-two-phone-number').required = true;
     document.getElementById('owner-two-email').required = true;
+    document.getElementById('signature-input-owner-two').required = true;
 
-    document.getElementById('owner-two-first-name').setAttribute('name','owner-two-first-name');
-    document.getElementById('owner-two-last-name').setAttribute('name','owner-two-last-name');
-    document.getElementById('owner-two-percent-ownership-hidden').setAttribute('name','owner-two-percent-ownership');
-    document.getElementById('owner-two-address').setAttribute('name','owner-two-address');
-    document.getElementById('owner-two-city').setAttribute('name','owner-two-city');
-    document.getElementById('owner-two-state').setAttribute('name','owner-two-state');
-    document.getElementById('owner-two-zip-code').setAttribute('name','owner-two-zip-code');
-    document.getElementById('owner-two-birth-month-select').setAttribute('name','owner-two-birth-month');
-    document.getElementById('owner-two-birth-day-select').setAttribute('name','owner-two-birth-day');
-    document.getElementById('owner-two-social-security').setAttribute('name','owner-two-social-security');
-    document.getElementById('owner-two-phone-number').setAttribute('name','owner-two-phone-number');
-    document.getElementById('owner-two-email').setAttribute('name','owner-two-email');
-    document.getElementById('owner-two-homeowner-yes').setAttribute('name','owner-two-homeowner');
-    document.getElementById('owner-two-homeowner-no').setAttribute('name','owner-two-homeowner');
+    document.getElementById('owner-two-first-name').setAttribute('name','Owner Two First Name');
+    document.getElementById('owner-two-last-name').setAttribute('name','Owner Two Last Name');
+    document.getElementById('owner-two-percent-ownership-hidden').setAttribute('name','Owner Two Percent Ownership');
+    document.getElementById('owner-two-address').setAttribute('name','Owner Two Address');
+    document.getElementById('owner-two-city').setAttribute('name','Owner Two City');
+    document.getElementById('owner-two-state').setAttribute('name','Owner Two State');
+    document.getElementById('owner-two-zip-code').setAttribute('name','Owner Two Zip Code');
+    document.getElementById('owner-two-birth-month-select').setAttribute('name','Owner Two Birth Month');
+    document.getElementById('owner-two-birth-day-select').setAttribute('name','Owner Two Birth Day');
+    document.getElementById('owner-two-social-security').setAttribute('name','Owner Two Social Security');
+    document.getElementById('owner-two-phone-number').setAttribute('name','Owner Two Phone Number');
+    document.getElementById('owner-two-email').setAttribute('name','Owner Two Email');
+    document.getElementById('owner-two-homeowner-yes').setAttribute('name','Owner Two Homeowner');
+    document.getElementById('owner-two-homeowner-no').setAttribute('name','Owner Two Homeowner');
+    document.getElementById('signature-input-owner-two').setAttribute('name', 'Signature Owner Two');
   }
 }
 
 function hideInputDiv() {
   inputDiv.classList.add('none');
   inputDiv.classList.remove('visible');
+  ownerTwoSignature.classList.add('none');
+  ownerTwoSignature.classList.remove('visible');
   document.getElementById('owner-two-first-name').required = false;
   document.getElementById('owner-two-last-name').required = false;
   document.getElementById('owner-two-percent-ownership').required = false;
@@ -116,6 +73,7 @@ function hideInputDiv() {
   document.getElementById('owner-two-social-security').required = false;
   document.getElementById('owner-two-phone-number').required = false;
   document.getElementById('owner-two-email').required = false;
+  document.getElementById('signature-input-owner-two').required = false;
 
   document.getElementById('owner-two-first-name').removeAttribute('name');
   document.getElementById('owner-two-last-name').removeAttribute('name');
@@ -131,10 +89,27 @@ function hideInputDiv() {
   document.getElementById('owner-two-email').removeAttribute('name');
   document.getElementById('owner-two-homeowner-yes').removeAttribute('name');
   document.getElementById('owner-two-homeowner-no').removeAttribute('name');
+  document.getElementById('signature-input-owner-two').removeAttribute('name');
 }
 
 
+// Form Cleaning when Input Unused //
+function removeUnusedInputsFromForm() {
+  let dba = document.getElementById('dba').value;
+  let fedId = document.getElementById('fed-id').value;
+  let businessType = document.getElementById('business-type').value;
+  if (dba === ('')) {
+    document.getElementById('dba').removeAttribute('name');
+  }
+  if (fedId === ('')) {
+    document.getElementById('fed-id').removeAttribute('name');
+  }
+  if (businessType === ('')) {
+    document.getElementById('business-type').removeAttribute('name');
+  }
+}
 
+// Form Cleaning FedID //
 function hyphenateFedId() {
   let fedId = document.getElementById('fed-id').value;
   if (fedId.includes('-')) {
@@ -149,6 +124,22 @@ function hyphenateFedId() {
   }
 }
 
+// Form Cleaning Business Start Date //
+function hyphenateBusinessStartDate() {
+  let businessStartDate = document.getElementById('business-start-date').value;
+  if (businessStartDate.includes('-') || businessStartDate.includes('/')) {
+    return;
+  } else {
+    let chars = businessStartDate.split("");
+    businessStartDate = chars[0] + chars[1] + '/' + chars[2] + chars[3] + '/' + chars[4] + chars[5] + chars[6] + chars[7];
+    document.getElementById('business-start-date').value = businessStartDate;
+    if (businessStartDate === 'NaN-undefinedundefinedundefinedundefinedundefinedundefined' || businessStartDate === 'NaN/undefinedundefined/undefinedundefinedundefinedundefined') {
+    document.getElementById('fed-id').value = '';
+    }
+  }
+}
+
+// Form Cleaning Percent Ownership //
 function appendOwnerOnePercentOwnership() {
   let percentOwnership = document.getElementById('owner-one-percent-ownership').value;
   document.getElementById('owner-one-percent-ownership-hidden').value = percentOwnership + '%';
@@ -165,6 +156,7 @@ function appendOwnerTwoPercentOwnership() {
   }
 }
 
+// Form Cleaning Birthday //
 function appendOwnerOneBirthInfo() {
   let birthMonth = document.getElementById('owner-one-birth-month-select').value;
   let birthDay = document.getElementById('owner-one-birth-day-select').value;
@@ -185,6 +177,7 @@ function appendOwnerTwoBirthInfo() {
   document.getElementById("owner-two-birth-year-select").removeAttribute("name");
 }
 
+// Form Cleaning Social Security //
 function hyphenateOwnerOneSocialSecurity() {
   let socialSecurity = document.getElementById('owner-one-social-security').value;
   if (socialSecurity.includes('-')) {
@@ -213,6 +206,7 @@ function hyphenateOwnerTwoSocialSecurity() {
   }
 }
 
+// Form Cleaning Phone Numbers //
 function appendBusinessPhoneNumber() {
   let phoneNumber = document.getElementById('business-phone-number').value;
   if (phoneNumber.includes('-' || ['(' && ')'])) {
@@ -255,6 +249,14 @@ function appendOwnerTwoPhoneNumber() {
   }
 }
 
+// Form Cleaning - Overall //
+function reviseBusinessInputs() {
+  removeUnusedInputsFromForm();
+  hyphenateFedId();
+  appendBusinessPhoneNumber();
+  hyphenateBusinessStartDate();
+}
+
 function reviseOwnerOneInputs() {
   appendOwnerOnePercentOwnership();
   appendOwnerOneBirthInfo();
@@ -270,21 +272,21 @@ function reviseOwnerTwoInputs() {
 }
 
 function createReadableEmail() {
-  hyphenateFedId();
-  appendBusinessPhoneNumber();
+  reviseBusinessInputs();
   reviseOwnerOneInputs();
   reviseOwnerTwoInputs();
 }
 
+// Submit Form //
 function submitForm() {
   createReadableEmail();
   
   let selectedVal = document.getElementById("sales-rep-select").value;
   document.getElementById("recipient").value = selectedVal;
   let test = document.getElementById("recipient").value;
-  if (test === "rossi-lausso") {
+  if (test === "Rossi Lausso") {
     document.forms.information.action = "https://formsubmit.co/oscgmora@gmail.com";
-  } else if (test === "yvonne-cruz") {
+  } else if (test === "Yvonne Cruz") {
     document.forms.information.action = "https://formsubmit.co/moragoscar@outlook.com";
   } else {
     document.forms.information.action = "https://formsubmit.co/omora@seawoodbuilders.com"

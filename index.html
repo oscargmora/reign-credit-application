@@ -8,49 +8,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<!-- Header -->
     <header>
         <img src="Outlook-Logo" alt="Reign Finance Group Logo">
     </header>
     <divider>
         <div>Credit Application</div>
     </divider>
+<!-- Form -->
     <main>
         <form id="information" name="information" action="https://formsubmit.co/48cb08fc1eb35ae6faee9c76866b3cd7" method="POST"/>
-        <input type="hidden" name="recipient" id="recipient" value="sales-rep-select">
+        <input type="hidden" name="Recipient" id="recipient" value="sales-rep-select">
         <input type="hidden" name="_next" value="http://127.0.0.1:5500/thankyou.html">
         <input type="hidden" name="_subject" value="New Credit Application">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_replyto">
+<!-- Form - Business Section -->
             <div id="business-form-section">
                 <div class="form-container" id="name-container">
                     <div class="form">
                         <label for="business-name">Legal Business Name<span class="required-label">*</span></label>
-                        <input type="text" id="business-name" name="business-name" required/>
+                        <input type="text" id="business-name" name="Business Name" required/>
                     </div>
                     <div class="form">
                         <label for="dba">Doing Business As Name (DBA)</label>
-                        <input type="text" id="dba" name="dba"/>
+                        <input type="text" id="dba" name="DBA"/>
                     </div>
                     <div class="form">
                         <label for="fed-id">Fed ID #</label>
-                        <input type="tel" id="fed-id" name="fed-id" pattern="[0-9]{2}-?[0-9]{7}"/>
+                        <input type="tel" id="fed-id" name="Fed ID" pattern="[0-9]{2}-?[0-9]{7}"/>
                     </div>
                 </div>
                 <div class="form-container" id="address-container">
                     <div class="form">
                         <label for="business-address" id="address-label">Business Address<span class="required-label">*</span></label>
-                        <input type="text" id="business-address" name="business-address" required/>
+                        <input type="text" id="business-address" name="Business Address" required/>
                         <p class="form-input-footer">Address Line</p>
                     </div>
                 </div>
                 <div class="form-container" id="city-container">
                     <div class="form">
                         <div class="block"></div>
-                        <input type="text" id="business-city" name="business-city" required/>
+                        <input type="text" id="business-city" name="Business City" required/>
                         <p class="form-input-footer">City</p>
                     </div>
                     <div class="form">
-                        <select name="business-state" required>
+                        <select name="Business State" required>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -108,28 +111,28 @@
                 </div>
                 <div class="form-container" id="city-container">
                     <div class="form">
-                        <input type="tel" id="business-zip-code" name="business-zip-code" pattern="\d{5}(-\d{4})?" required/>
+                        <input type="tel" id="business-zip-code" name="Business Zip Code" pattern="\d{5}(-\d{4})?" required/>
                         <p class="form-input-footer">Zip Code</p>
                     </div>
                 </div>
                 <div class="form-container" id="phone-number-container">
                     <div class="form">
                         <label for="business-phone-number" id="business-phone-number-label">Business Phone Number<span class="required-label">*</span></label>
-                        <input type="tel" id="business-phone-number" name="business-phone-number" pattern="(\+?\d{1,2}\s?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}" maxlength="16" required/>
+                        <input type="tel" id="business-phone-number" name="Business Phone Number" pattern="(\+?\d{1,2}\s?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}" maxlength="16" required/>
                     </div>
                     <div class="form">
                         <label for="business-email" id="business-email-label">Business Email<span class="required-label">*</span></label>
-                        <input type="text" id="business-email" name="business-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                        <input type="text" id="business-email" name="Business Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
                     </div>
                     <div class="form">
                         <label for="business-start-date">Business Start Date<span class="required-label">*</span></label>
-                        <input type="text" id="business-start-date" name="business-start-date" pattern="\d{2}[-\/]?\d{2}[-\/]?\d{4}" placeholder="mm/dd/yyyy" required/>
+                        <input type="text" id="business-start-date" name="Business Start Date" pattern="\d{2}[\/\-]?\d{2}[\/\-]?\d{2}[\/\-]?\d{2}" placeholder="mm/dd/yyyy" required/>
                     </div>
                 </div>
                 <div class="form-container" id="first-structure-container">
                     <div class="form">
                         <label for="business-structure">Legal Business Structure<span class="required-label">*</span></label>
-                        <select name="business-structure" required>
+                        <select name="Business Structure" required>
                             <option value class="placeholder" selected disabled hidden>Select</option>
                             <option value="SP">Sole Proprietor</option>
                             <option value="LLC">LLC</option>
@@ -139,13 +142,11 @@
                     </div>
                     <div class="form">
                         <label for="business-type">Business Type/Services Provided</label>
-                        <input type="text" id="business-type" name="business-type"/>
+                        <input type="text" id="business-type" name="Business Type"/>
                     </div>
                 </div>
             </div>
-
-
-
+<!-- Form - Owner One Section Divider -->
             <div id="owner-one-form-section">
                 <section-divider>
                     <div>
@@ -153,39 +154,36 @@
                         <div id="section-divider-line"></div>
                     </div>
                 </section-divider>
-
-
-
-
+<!-- Form - Owner One Section -->
                 <div class="form-container" id="first-name-container">
                     <div class="form">
                         <label for="owner-one-first-name">First Name<span class="required-label">*</span></label>
-                        <input type="text" id="owner-one-first-name" name="owner-one-first-name" required/>
+                        <input type="text" id="owner-one-first-name" name="Owner One First Name" oninput='getOwnerOneNamesSignature()' required/>
                     </div>
                     <div class="form">
                         <label for="owner-one-last-name">Last Name<span class="required-label">*</span></label>
-                        <input type="text" id="owner-one-last-name" name="owner-one-last-name" required/>
+                        <input type="text" id="owner-one-last-name" name="Owner One Last Name" oninput='getOwnerOneNamesSignature()'required/>
                     </div>
                     <div class="form">
-                        <input hidden type="text" id="owner-one-percent-ownership-hidden" name="owner-one-percent-ownership" value="" />
+                        <input hidden type="text" id="owner-one-percent-ownership-hidden" name="Owner One Percent Ownership" value="" />
                         <label for="owner-one-percent-ownership">Percent Ownership<span class="required-label">*</span></label>
-                        <input type="number" max="100"  min="0" id="owner-one-percent-ownership" name="owner-one-percent-ownership"/>
+                        <input type="number" max="100"  min="0" id="owner-one-percent-ownership" name="Owner One Percent Ownership"/>
                     </div>
                 </div>
                 <div class="form-container" id="address-container">
                     <div class="form">
                         <label for="owner-one-address" id="owner-one-address-label">Address<span class="required-label">*</span></label>
-                        <input type="text" id="owner-one-address" name="owner-one-address" required/>
+                        <input type="text" id="owner-one-address" name="Owner One Address" required/>
                         <p class="form-input-footer">Address Line</p>
                     </div>
                 </div>
                 <div class="form-container" id="city-container">
                     <div class="form">
-                        <input type="text" id="owner-one-city" name="owner-one-city" required/>
+                        <input type="text" id="owner-one-city" name="Owner One City" required/>
                         <p class="form-input-footer">City</p>
                     </div>
                     <div class="form">
-                        <select name="owner-one-state" required>
+                        <select name="Owner One State" required>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -243,7 +241,7 @@
                 </div>
                 <div class="form-container" id="city-container">
                     <div class="form">
-                        <input type="tel" id="owner-one-zip-code" name="owner-one-zip-code" pattern="\d{5}(-\d{4})?" required/>
+                        <input type="tel" id="owner-one-zip-code" name="Owner One Zip Code" pattern="\d{5}(-\d{4})?" required/>
                         <p class="form-input-footer">Zip Code</p>
                     </div>
                 </div>
@@ -251,8 +249,8 @@
                     <div class="form" id="birth-date-container">
                         <label for="date-of-birth">Date of Birth<span class="required-label">*</span></label>
                         <div class="birth-date-select-container">
-                        <input hidden type="text" id="owner-one-date-of-birth" name="owner-one-date-of-birth" value="" />
-                            <select class="birth-month" name="owner-one-birth-month" id="owner-one-birth-month-select">
+                        <input hidden type="text" id="owner-one-date-of-birth" name="Owner One Date of Birth" value="" />
+                            <select class="birth-month" name="Owner One Birth Month" id="owner-one-birth-month-select">
                                 <option value class="placeholder" selected disabled hidden>mm</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
@@ -267,7 +265,7 @@
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-                            <select class="birth-day" name="owner-one-birth-day" id="owner-one-birth-day-select">
+                            <select class="birth-day" name="Owner One Birth Day" id="owner-one-birth-day-select">
                                 <option value class="placeholder" selected disabled hidden>dd</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
@@ -301,7 +299,7 @@
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-                            <select class="birth-year" name="owner-one-birth-year" id="owner-one-birth-year-select">
+                            <select class="birth-year" name="Owner One Birth Year" id="owner-one-birth-year-select">
                                 <option value class="placeholder" selected disabled hidden>yyyy</option>
                                 <option value="2023">2023</option>
                                 <option value="2022">2022</option>
@@ -382,25 +380,25 @@
                     </div>
                     <div class="form">
                         <label for="owner-one-social-security">Social Security (SSN)<span class="required-label">*</span></label>
-                        <input type="tel" id="owner-one-social-security" name="owner-one-social-security" pattern="[0-9]{3}-?[0-9]{2}-?[0-9]{4}" required/>
+                        <input type="tel" id="owner-one-social-security" name="Owner One Social Security" pattern="[0-9]{3}-?[0-9]{2}-?[0-9]{4}" required/>
                     </div>
                     <div class="form">
                         <label for="owner-one-phone-number">Phone Number<span class="required-label">*</span></label>
-                        <input type="tel" id="owner-one-phone-number" name="owner-one-phone-number" pattern="(\+?\d{1,2}\s?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}" maxlength="16" required/>
+                        <input type="tel" id="owner-one-phone-number" name="Owner One Phone Number" pattern="(\+?\d{1,2}\s?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}" maxlength="16" required/>
                     </div>
                     </div>
                     <div class="form-container">
                         <div class="form">
                             <label for="owner-one-email">Email<span class="required-label">*</span></label>
-                            <input type="email" id="owner-one-email" name="owner-one-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                            <input type="email" id="owner-one-email" name="Owner One Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
                         </div>
                     <div class="form">
                         <p id="homeowner">Are you a homeowner?</p>
                         <div id="homeowner-radio-buttons">
                             <label for="yes">Yes</label>
-                            <input class="radio" type="radio" id="yes" name="owner-one-homeowner" value="yes">
+                            <input class="radio" type="radio" id="yes" name="Owner One Homeowner" value="Yes">
                             <label for="no">No</label>
-                            <input class="radio" type="radio" id="no" name="owner-one-homeowner" value="no">
+                            <input class="radio" type="radio" id="no" name="Owner One Homeowner" value="No">
                         </div>
                     </div>
                 </div>
@@ -409,20 +407,19 @@
                             <p id="add-owner">Add Principal Owner 2</p>
                             <div id="add-owner-radio-buttons-container">
                                 <div id="add-owner-radio-buttons">
-                                    <input class="radio" type="radio" id="no" name="second-owner" value="no" onClick="hideInputDiv()" checked/>
+                                    <input class="radio" type="radio" id="no" name="Second Owner" value="No" onClick="hideInputDiv()" checked/>
                                     <label for="no">No</label>
                                 </div>
                                 <div id="add-owner-radio-buttons">
-                                    <input class="radio" type="radio" id="add-principal-owner" name="second-owner" value="yes" onChange="addOwnerTwo()"/>
+                                    <input class="radio" type="radio" id="add-principal-owner" name="Second Owner" value="Yes" onChange="addOwnerTwo()"/>
                                     <label for="add-principal-owner">Add Principal Owner</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-      
-      
+            </div>    
+<!-- Form - Owner Two Section Divider -->    
             <div id="owner-two-section" class="none">
                 <section-divider>
                     <div>
@@ -430,18 +427,15 @@
                         <div id="section-divider-line"></div>
                     </div>
                 </section-divider>
-
-
-
-
+<!-- Form - Owner Two Section -->
                 <div class="form-container" id="first-name-container">
                     <div class="form">
                         <label for="owner-two-first-name">First Name<span class="required-label">*</span></label>
-                        <input type="text" id="owner-two-first-name"/>
+                        <input type="text" id="owner-two-first-name" oninput='getOwnerTwoNamesSignature()'/>
                     </div>
                     <div class="form">
                         <label for="owner-two-last-name">Last Name<span class="required-label">*</span></label>
-                        <input type="text" id="owner-two-last-name"/>
+                        <input type="text" id="owner-two-last-name"  oninput='getOwnerTwoNamesSignature()'/>
                     </div>
                     <div class="form">
                         <input hidden type="text" id="owner-two-percent-ownership-hidden" value="" />
@@ -529,7 +523,7 @@
                         <label for="date-of-birth">Date of Birth<span class="required-label">*</span></label>
                         <div class="birth-date-select-container">
                         <input hidden type="text" id="owner-two-date-of-birth" value="" />
-                            <select class="birth-month" name="owner-two-birth-month" id="owner-two-birth-month-select">
+                            <select class="birth-month" name="Owner Two Birth Month" id="owner-two-birth-month-select">
                                 <option value class="placeholder" selected disabled hidden>mm</option>
                                 <option value="01">1</option>
                                 <option value="02">2</option>
@@ -675,24 +669,25 @@
                         <p id="homeowner">Are you a homeowner?</p>
                         <div id="homeowner-radio-buttons">
                             <label for="yes">Yes</label>
-                            <input class="radio" type="radio" id="owner-two-homeowner-yes" value="yes"/>
+                            <input class="radio" type="radio" id="owner-two-homeowner-yes" value="Yes"/>
                             <label for="no">No</label>
-                            <input class="radio" type="radio" id="owner-two-homeowner-no" value="no"/>
+                            <input class="radio" type="radio" id="owner-two-homeowner-no" value="No"/>
                         </div>
                     </div>
                 </div>
             </div>
+<!-- Form - Terms Section -->
             <div id="terms-form-section">
                 <div class="form-container" id="sales-rep-form-container">
                     <div class="form" id="sales-rep-form">
                         <label for="sales-rep" id="sales-rep-label">Select your Sales Representative<span class="required-label">*</span></label>
                         <select id="sales-rep-select" required>
                             <option value class="placeholder" selected disabled hidden>Select</option>
-                            <option value="rossi-lausso">Rossi Lausso</option>
-                            <option value="yvonne-cruz">Yvonne Cruz</option>
-                            <option value="agent-one">Agent 1</option>
-                            <option value="agent-two">Agent 2</option>
-                            <option value="agent-three">Agent 3</option>
+                            <option value="Rossi Lausso">Rossi Lausso</option>
+                            <option value="Yvonne Cruz">Yvonne Cruz</option>
+                            <option value="Agent One">Agent 1</option>
+                            <option value="Agent Two">Agent 2</option>
+                            <option value="Agent Three">Agent 3</option>
                         </select>
                     </div>
                 </div>  
@@ -700,7 +695,7 @@
                     <div class="form" id="checkbox-form">
                         <label for="terms" id="terms-label">Read and Accept<span class="required-label">*</span></label>
                         <div id="checkbox-container">
-                            <input class="checkbox" type="checkbox" id="terms" name="terms" required/>
+                            <input class="checkbox" type="checkbox" id="terms" name="Terms" required/>
                             <p id="terms-paragraph">
                                 By signing below, the undersigned individuals acknowledges and agrees as follows: (i) all information provided to Reign Finance Group LLC and [or] their corporate affiliates by Signers is true and complete; (ii) Signers will provide
                                 full credit report to Reign Finance group LLC or will authorize Reign Finance Group LLC to run a soft pull under the following options:
@@ -722,21 +717,35 @@
                         </div>
                     </div>
                 </div>
-                <div id="signature-pad-form-container">
-                    <div id="signature-pad-form-styling">
-                    <div id="signature-pad-form">
-                        <label for="signature">Signature<span class="required-label">*</span></label>
-                    <canvas class="signature-pad" name="signature"></canvas>
-                    </div>
+                <div id="signature-form-container">
+                    <div id="signature-form-styling">
+                        <div id="signature-form">
+                            <label for="signature">Signature<span class="required-label">*</span></label>
+                            <p>Typing your name exactly as it appears below signifies you are completing this form using an electronic signature.
+                                By signing electronically, you are certifying that you have read and understand the terms listed and agree to electronically sign.
+                                You also agree to receive required disclosures or other communications related to this application application electronically.
+                                To continue with the electronic signature process, please enter your name and click the "Sign Electronically" button to save your information and submit your electronic signature.
+                            </p>
+                            <div id="signature-input-container">
+                                <div id="first-owner-signature-input-container">
+                                    <input id="signature-input-owner-one" type="text" name="Signature Owner One" required/>
+                                    <p id="name-p-signature-owner-one"></p>
+                                </div>
+                                <div id="second-owner-signature-input-container" class="none">
+                                    <input id="signature-input-owner-two" type="text"/>
+                                    <p id="name-p-signature-owner-two"></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-container">
                 <div class="form" id="clear-form">
-                    <a href="#" class="clear-button">Clear</a>
+                    <a href="#" class="clear-button"></a>
                 </div>  
                 </div>
                 <div class="form-container">
-                    <button type="submit" id="submit-button" onclick="submitForm()">Submit</button>
+                    <button type="submit" id="submit-button" onclick="submitForm()">Sign Electronically</button>
                 </div>
             </div>
         </form>
